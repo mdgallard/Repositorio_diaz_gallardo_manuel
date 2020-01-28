@@ -1,0 +1,36 @@
+Algoritmo Romanos
+	Escribir "ingrese un numero entre 1 y 1000"
+	Leer numero
+	sepuedeconvertir <-verdadero
+	si numero=0 entonces
+		Escribir "no existe ningun simbolo para representar el 0"
+		sepuedeconvertir <-falso
+	FinSi
+	si numero<>trunc(numero) Entonces
+		Escribir  "el numero debe ser entero"
+		sepuedeconvertir<-Falso
+	FinSi
+	si numero>1000 Entonces
+		Escribir "muy alto"
+		sepuedeconvertir<-Falso
+	FinSi
+	si numero<0 Entonces
+		Escribir "debe ser positivo"
+		sepuedeconvertir<-Falso
+	FinSi
+	si sepuedeconvertir Entonces
+		si numero=1000 Entonces
+			Escribir "M"
+		SiNo
+			Dimension nu(10),nd(10),nc(10)
+			nu(1)<-'';nu(2)<-'I';nu(3)<-'II';nu(4)<-'III';nu(5)<-'IV';nu(6)<-'V';nu(7)<-'VI';nu(8)<-'VII';nu(9)<-'VIII';nu(10)<-'IX'
+			nd(1)<-'';nu(2)<-'X';nu(3)<-'XX';nu(4)<-'XXX';nu(5)<-'XL';nu(6)<-'L';nu(7)<-'LX';nu(8)<-'LXX';nu(9)<-'LXXX';nu(10)<-'XC'
+			nc(1)<-'';nu(2)<-'C';nu(3)<-'CC';nu(4)<-'CCC';nu(5)<-'CD';nu(6)<-'D';nu(7)<-'DC';nu(8)<-'DCC';nu(9)<-'DCCC';nu(10)<-'CM'
+			centenas<-trunc(numero/100) MOD 10
+			decenas<-trunc(numero/10) MOD 10
+			unidades numero MOD 10
+			Escribir nc(centenas+1),nd(decenas+1),nu(unidades+1)
+		FinSi
+	FinSi
+FinAlgoritmo
+	
